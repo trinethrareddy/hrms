@@ -1,0 +1,43 @@
+@import '../../../variables';
+@import '../../../function';
+@import '../../../mixins';
+.departments {
+    min-height: 429px;
+    background-color: var(--light-blue-bg);
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+    &-title {
+        margin-bottom: 1rem;
+    }
+   &-list {
+    display: flex;
+    flex-wrap: wrap;
+       .department {
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 200px;
+           min-height: 200px;
+           border-radius: 4px;
+           margin: 0 10px 15px 10px;
+           background-color: $white;
+           padding: 0.625rem;
+           &:hover {
+               box-shadow: $box-shadow;
+           }
+           img {
+            width: 70px;
+            height: 75px;
+            margin-bottom: 23px;
+           }
+           &_name {
+            font-size: 1.375rem;
+            line-height: 1.75rem;
+            font-weight: 500;
+            word-break: break-all;
+            color: var(--description-color);
+           }
+       }
+   }
+}

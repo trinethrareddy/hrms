@@ -1,0 +1,23 @@
+<div class="home">
+    <div id="heroImage">
+        <app-hero-image [configData]="webConfigData"></app-hero-image>
+    </div>
+    <div id="aboutUs" *ngIf="aboutUsText">
+        <app-about [aboutText]="aboutUsText"></app-about>
+    </div>
+    <div id="departments" *ngIf="departments.length">
+        <app-departments [departments]="departments"></app-departments>
+    </div>
+    <div id="doctors">
+        <app-our-doctors></app-our-doctors>
+    </div>
+    <div id="testimonials">
+        <app-testimonials></app-testimonials>
+    </div>
+    <div id="gallery">
+        <app-gallery></app-gallery>
+    </div>
+    <div id="contactUs">
+        <app-contact></app-contact>
+    </div>
+</div>

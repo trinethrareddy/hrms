@@ -1,0 +1,10 @@
+@import "../../../variables";
+@import '../../../function';
+.footer {
+    background-color: var(--light-blue-bg);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    min-height: $footer-height;
+}

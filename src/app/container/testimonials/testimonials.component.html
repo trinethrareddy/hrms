@@ -1,0 +1,51 @@
+<div class="testimonials" animateOnScroll animationName="animated animatedFadeInUp fadeInUp" offset="120">
+    <div>
+        <h4 class="text-center w-100">HAPPY CLIENTS </h4>
+        <h2 class="text-center w-100">What our Patients Are Saying</h2>
+        <div class="testimonials-review container">
+            <ngb-carousel *ngIf="images">
+                <ng-template ngbSlide>
+                    <div class="review-text">
+                        <fa name="cog" animation="spin"></fa>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                        accumsan
+                        vvds lacus. 1
+                        <div class="text-center">
+                            <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                        </div>
+                    </div>
+                    
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="review-text">
+                            Your rating of the quality of care you received
+                        <div class="text-center">
+                                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                        </div>
+                    </div>
+                  
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="review-text">
+                            Your rating of the friendliness, knowledgeability and helpfulness of the staff
+                        <div class="text-center">
+                                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                            </div>
+                    </div>
+                   
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="review-text">
+                            Your rating of how quickly your care was given once at the facility
+                        <div class="text-center">
+                                <ngb-rating [(rate)]="currentRate"></ngb-rating>
+                            </div>
+                    </div>
+                    
+                </ng-template>
+            </ngb-carousel>
+        </div>
+    </div>
+</div>

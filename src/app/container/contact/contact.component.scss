@@ -1,0 +1,17 @@
+@import '../../../variables';
+@import '../../../function';
+@import '../../../mixins';
+.contact-details {
+    padding: 24px 0px;
+    .form {
+        &-title {
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        label {
+            font-size: 18px;
+            line-height: 16px;
+            margin-bottom: 5px;
+        }
+    }
+}

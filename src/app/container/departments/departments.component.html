@@ -1,0 +1,18 @@
+<div class="departments" animateOnScroll animationName="animated animatedFadeInUp fadeInUp">
+    <div class="container">
+        <div class="departments-title w-100 text-center">
+            <h2> Departments we are Dealing with</h2>
+        </div>
+        <div class="departments-list w-100">
+            <div class="department text-center" *ngFor="let department of displayDepartments; let i = index;">
+                <div>
+                    <img src="assets/departmentIcons/stethoscope.svg" alt="{{department}}">
+                    <div class="department_name">{{department}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 m-t-20 text-center" *ngIf="departments.length > displayDepartments.length">
+            <a href="javascript:void(0)" (click)="viewMore()">View More</a>
+        </div>
+    </div>
+</div>

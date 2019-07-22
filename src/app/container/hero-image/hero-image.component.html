@@ -1,0 +1,45 @@
+<div class="hero-image">
+    <div class="hero-image-carousel">
+        <ngb-carousel *ngIf="bannerData">
+            <ng-template ngbSlide *ngFor="let item of bannerData; let i= index">
+                <img class="w-100" src="assets/images/slider-1.jpg" alt="Random first slide">
+                <div class="carousel-caption animated fadeInLeft">
+                    <h3>{{item.description}}</h3>
+                    <button class="btn btn-primary dru-btn" *ngIf="isBookAppointment">Book Appointment</button>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+    <div class="hero-about">
+        <div class="row animated animatedFadeInUp fadeInUp">
+            <div class="col-md-4 col-12">
+                <div class="data-card">
+                    <div class="title-color data-card-title">Emergency Cases</div>
+                    <div class="description-color data-card-description">
+                        If an urgent problem arises or you need a doctor urgently outside of opening hours or emergency
+                        appointment. when the dropdown is open. Menu titles provide scope and direction by reminding.
+                    </div>
+                    <div class="data-card-links">
+                        <a href="tel:{{emergencyContactNo}}" title="Make a Call {{emergencyContactNo}}" class="phone"> {{emergencyContactNo}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 ">
+                <div class="data-card">
+                    <div class="title-color data-card-title">Our Achievements</div>
+                    <div class="description-color data-card-description">
+                        {{achievement.achievementText}}
+                    </div>
+                    <div class="data-card-links" *ngIf="achievement.achievementUrl">
+                        <a [href]="achievement.achievementUrl" target="_blank" class="link"> View Link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+                <div class="data-card">
+                    <div class="title-color data-card-title">Working Hours</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+// media queries variables
+$break-small: 375px;
+$break-tablets: 768px;
+$break-medium-desktops: 1024px;
+$break-large-desktops: 1440px;
+$break-extra-large-desktops: 1680px;
+
+@mixin get-media-query($min-width, $max-width) {
+  @if $min-width != null and $max-width != null {
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else if $max-width == null {
+    @media only screen and (min-width: $min-width) {
+      @content;
+    }
+  } @else if $min-width == null {
+    @media only screen and (max-width: $max-width) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-to($media) {
+  @if $media == phones {
+    @media screen and (min-width: $break-small) and (max-width: $break-tablets - 1) {
+      @content;
+    }
+  } @else if $media == tablets {
+    @media only screen and (min-width: $break-tablets) and (max-width: $break-medium-desktops - 1) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (min-width: $break-medium-desktops) and (max-width: $break-large-desktops - 1) {
+      @content;
+    }
+  } @else if $media == large-screens {
+    @media only screen and (min-width: $break-large-desktops) and (max-width: $break-extra-large-desktops - 1) {
+      @content;
+    }
+  } @else if $media == extra-large-screens {
+    @media only screen and (min-width: $break-extra-large-desktops) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-above($media) {
+  @if $media == phones {
+    @media screen and (min-width: $break-tablets) {
+      @content;
+    }
+  } @else if $media == tablets {
+    @media only screen and (min-width: $break-medium-desktops) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (min-width: $break-large-desktops) {
+      @content;
+    }
+  } @else if $media == large-screens {
+    @media only screen and (min-width: $break-extra-large-desktops) {
+      @content;
+    }
+  }
+}
+
+// Works for IE10+
+@mixin ie-respond-above($media) {
+  @if $media == phones {
+    @media screen and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) and (min-width: $break-tablets) {
+      @content;
+    }
+  } @else if $media == tablets {
+    @media only screen and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) and (min-width: $break-medium-desktops) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) and (min-width: $break-large-desktops) {
+      @content;
+    }
+  } @else if $media == large-screens {
+    @media only screen and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) and (min-width: $break-extra-large-desktops) {
+      @content;
+    }
+  }
+}
+// Works for IE10+
+@mixin ie-respond() {
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin respond-portrait($media) {
+  @if $media == all {
+    @media screen and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == phones {
+    @media screen and (max-width: $break-tablets - 1) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == tablets {
+    @media screen and (max-width: $break-medium-desktops - 1) and (orientation: portrait) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-landscape($media) {
+  @if $media == all {
+    @media screen and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == phones {
+    @media screen and (max-width: $break-tablets - 1) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == tablets {
+    @media screen and (max-width: $break-medium-desktops - 1) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+@mixin respond-below($media) {
+  @if $media == tablets {
+    @media only screen and (max-width: $break-tablets - 1) {
+      @content;
+    }
+  } @else if $media == medium-screens {
+    @media only screen and (max-width: $break-medium-desktops - 1) {
+      @content;
+    }
+  } @else if $media == large-screens {
+    @media only screen and (max-width: $break-large-desktops - 1) {
+      @content;
+    }
+  } @else if $media == extra-large-screens {
+    @media only screen and (max-width: $break-extra-large-desktops - 1) {
+      @content;
+    }
+  }
+}
+
+// Vendor prefix
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}

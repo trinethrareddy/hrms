@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300i,400,500,600,700,800&subset=cyrillic,cyrillic-ext');
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'variables';
+@import 'function';
+@import 'assets/scss/normalize';
+@import 'assets/scss/animated';
+@import 'mixins';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: $default-font;
+    box-sizing: border-box;
+}
+.title-color {
+    color: var(--text-color);
+}
+.description-color {
+    color: var(--description-color);
+    opacity: 0.7;
+}
+.m-t-20 {
+    margin-top: 20px;
+}
+.hide {
+    display: none;
+}

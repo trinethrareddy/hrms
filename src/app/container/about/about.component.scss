@@ -1,0 +1,15 @@
+@import '../../../variables';
+@import '../../../mixins';
+@import '../../../function';
+.about {
+   text-align: center;
+   line-height: 26px;
+   margin-bottom: 60px;
+    &-title {
+        color: var(--text-color);
+    }
+   &-text {
+       color: var(--description-color);
+       font-size: 18px;
+   }
+}

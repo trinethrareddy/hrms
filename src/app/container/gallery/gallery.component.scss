@@ -1,0 +1,36 @@
+@import '../../../variables';
+@import '../../../function';
+@import '../../../mixins';
+.gallery {
+    min-height: 429px;    
+    display: flex;
+    align-items: center;
+    &-title {
+        margin-bottom: 16px;
+    }
+   &-list {
+    display: flex;
+    flex-wrap: wrap;
+       .image-holder {
+           width: 314px;
+           height: 218px;
+           border-radius: 4px;
+           margin-right: 24px;
+           background-color: $white;
+           margin-bottom: 15px;
+           overflow: hidden;
+           border: 1px solid var(--light-gray-color);
+           padding: 5px;
+           &:last-of-type {
+            margin-right: 0px;
+           }
+           &:hover {
+            box-shadow: $box-shadow;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+       }
+   }
+}

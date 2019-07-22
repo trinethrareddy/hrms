@@ -1,0 +1,48 @@
+@import '../../../variables';
+@import '../../../function';
+@import '../../../mixins';
+.doctors {
+    min-height: 429px;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    &-title {
+        margin-bottom: 16px;
+    }
+   &-list {
+    display: flex;
+    flex-wrap: wrap;
+       .doctor {
+           min-width: 253px;
+           max-width: 253px;
+           min-height: 279px;
+           border-radius: 4px;
+           margin-right: 24px;
+           background-color: $white;
+           margin-bottom: 15px;
+           border:1px solid rgba(225, 225, 225, 0.4);
+           text-align: center;
+           &:last-of-type {
+            margin-right: 0px;
+           }
+           &:hover {
+            box-shadow: $box-shadow;
+        }
+        &-name{
+            font-size: 22px;
+            line-height: 28px;
+            color: var(--description-color);
+        }
+        &-qualification {
+            font-size: 18px;
+            line-height: 23px;
+            color: var(--light-description-color);
+        }
+        &-image {
+            img {
+                width: 100%;
+            }
+        }
+       }
+   }
+}
